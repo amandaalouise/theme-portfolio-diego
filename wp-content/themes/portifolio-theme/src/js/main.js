@@ -6,6 +6,25 @@ import '../scss/style.scss';
 
 document.addEventListener("DOMContentLoaded", function () {
 
+    new fullScroll({
+        mainElement: 'main',
+        // parent container
+        container : 'main',
+        // content section
+        sections : 'section',
+        // animation speed
+        animateTime : 0.7,
+        // easing for animation
+        animateFunction : 'ease',
+        // current position
+        currentPosition: 0,
+        // display dots navigation
+        displayDots: true,
+        // where to place the dots navigation
+        dotsPosition: 'middle'
+    
+    });
+
     //hide nav open btn when the nav is open, adding/removing open classes to nav and content
     var navOpenBtn = document.querySelector('.nav-open-btn');
     var navCloseBtn = document.querySelector('.nav__close');

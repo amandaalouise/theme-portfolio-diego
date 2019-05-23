@@ -13,6 +13,7 @@
 
 @import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 
 //COMMON VARIABLES
 $dark-theme-color: #1c1c1c;
@@ -52,12 +53,12 @@ body {
   color: $dark-theme-color;
 }
 
-.content {
-  width: 550px;
-  padding-top: 50px;
-  margin: auto;
-  text-align: center;
-}
+// .content {
+//   width: 550px;
+//   padding-top: 50px;
+//   margin: auto;
+//   text-align: center;
+// }
 
 h1 {
   margin: 0;
@@ -341,6 +342,9 @@ $nav-open-btn-vert-offset: 30px;
 $nav-open-btn-horz-offset: 30px;
 
 .nav-open-btn {
+
+  z-index: 100;
+
   @include position-absolute($top: $nav-open-btn-vert-offset, $left: $nav-open-btn-horz-offset);
  @include transition-mix();
   
@@ -526,4 +530,93 @@ $nav-list-offset-vert: 30px;
   &.js-opened {
     left: $nav-width;
   }
+}
+
+body, html {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.scroll-container {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+
+.scroll-container section {
+	width: 100%;
+	height: 100%;
+}
+
+.dots {	
+  font-family: 'Poppins', sans-serif;
+	z-index: 1;
+  padding: 0;
+  height: 5px;
+	position: absolute;	
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.dots li a {
+  padding-bottom: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  color: #404044;
+  text-decoration: none;  
+}
+
+.dots li a:before {
+  line-height: 1;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 14px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  content: counter(item, decimal-leading-zero) " "; 
+  list-style-type: none;  
+  counter-increment: item;
+  display: block;
+	position: absolute;
+	-webkit-transition: -webkit-transform 0.3s ease, background-color 0.3s ease;
+	-moz-transition: -moz-transform 0.3s ease, background-color 0.3s ease;
+	-ms-transition: -ms-transform 0.3s ease, background-color 0.3s ease;
+	-o-transition: -o-transform 0.3s ease, background-color 0.3s ease;
+	transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+ol { 
+  counter-reset: item;
+  list-style-type: none;
+}
+
+.dots li a.active:before {
+  font-size: 18px !important;
+  text-decoration: none;
+  border-bottom: 2px solid #404044;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dots-right {
+	right: 10px;
+}
+
+.dots-left {
+	left: 10px;
+}
+
+.dots-middle {
+  left: 50%;
 }
