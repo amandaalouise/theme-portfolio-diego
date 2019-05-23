@@ -2,6 +2,7 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const bootstrap = new webpack.ProvidePlugin({
   $: 'jquery',
   jQuery: 'jquery',
@@ -11,7 +12,11 @@ const favicon = new HtmlWebpackPlugin({
   favicon: 'src/images/favicon.ico'
 });
 
+
 module.exports = {
+  node: {
+    fs: 'empty'
+  },
   entry: ['./src/js/main.js', './src/scss/style.scss'],
   output: {
     filename: './dist/js/main.min.js',

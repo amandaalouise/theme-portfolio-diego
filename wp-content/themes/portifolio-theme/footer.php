@@ -1,5 +1,7 @@
 <?php 
 
-wp_foot(); 
+wp_footer(); 
 
 ?>
+
+</div>
