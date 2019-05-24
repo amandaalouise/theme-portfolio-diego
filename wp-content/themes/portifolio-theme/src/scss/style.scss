@@ -799,4 +799,15 @@ span.title {
   flex-grow : 1;
 }
 
+.typewriter {
+  color: $accent-theme-color;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.typed-cursor {
+  color: $accent-theme-color;
+  font-size: 28px;
+  margin-left: 2px;
+}
 //Fim teste

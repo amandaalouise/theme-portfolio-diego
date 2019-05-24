@@ -25,20 +25,12 @@ module.exports = {
   module: {
     rules: [
       {
-				test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+				test: /\.(woff2?|eot|ttf|otf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
 				loader: 'file-loader',
 				query: {
 					name: 'static/media/fonts/[name].[hash:8].[ext]'
 				}
 			},
-      {
-        test: /\.(woff2?|eot|ttf|otf)$/,
-        loader: 'file-loader',
-        options: {
-          limit: 10000,
-          name: '[name].[hash:7].[ext]'
-        }
-      },
       { test: /\.(jpe?g|png|gif|ico)$/i, loader: 'file?name=[name].[ext]' },
       {
         test: /\.scss$/,

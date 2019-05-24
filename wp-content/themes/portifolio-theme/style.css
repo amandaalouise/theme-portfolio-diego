@@ -12399,8 +12399,8 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: normal;
   font-display: auto;
-  src: url(static/media/fonts/fa-brands-400.63e24400.eot);
-  src: url(static/media/fonts/fa-brands-400.63e24400.eot?#iefix) format("embedded-opentype"), url(fa-brands-400.9f4ce3d.woff2) format("woff2"), url(fa-brands-400.9f018d1.woff) format("woff"), url(static/media/fonts/fa-brands-400.69a9f149.ttf) format("truetype"), url(static/media/fonts/fa-brands-400.38975343.svg#fontawesome) format("svg"); }
+  src: url(static/media/fonts/fa-brands-400.8e49b728.eot);
+  src: url(static/media/fonts/fa-brands-400.8e49b728.eot?#iefix) format("embedded-opentype"), url(static/media/fonts/fa-brands-400.9f4ce3dc.woff2) format("woff2"), url(static/media/fonts/fa-brands-400.9f018d10.woff) format("woff"), url(static/media/fonts/fa-brands-400.b7d071b9.ttf) format("truetype"), url(static/media/fonts/fa-brands-400.38975343.svg#fontawesome) format("svg"); }
 
 .fab {
   font-family: 'Font Awesome 5 Brands'; }
@@ -13094,3 +13094,13 @@ span.title {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1; }
+
+.typewriter {
+  color: #505CFD;
+  font-size: 28px;
+  font-weight: bold; }
+
+.typed-cursor {
+  color: #505CFD;
+  font-size: 28px;
+  margin-left: 2px; }
