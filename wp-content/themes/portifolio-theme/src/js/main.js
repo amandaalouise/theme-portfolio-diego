@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
          * @property {boolean} loop loop strings
          * @property {number} loopCount amount of loops
          */
-        loop: false,
+        loop: true,
         loopCount: Infinity,
       
         /**
@@ -180,23 +180,22 @@ document.addEventListener("DOMContentLoaded", function () {
     var pageContent = document.querySelector('.page__content');
     var navList = document.querySelector('.nav__list');
     var page = document.querySelector('.page');
+    var sidenav = document.querySelector('.sidenav');
 
     //open nav
     navOpenBtn.addEventListener('click', function () {
         navOpenBtn.classList.add('js-hidden');
-
         nav.classList.add('js-opened');
-
         pageContent.classList.add('js-opened');
+        sidenav.classList.add('position-fixed');
     });
 
     //close nav
     navCloseBtn.addEventListener('click', function () {
         navOpenBtn.classList.remove('js-hidden');
-
         nav.classList.remove('js-opened');
-
         pageContent.classList.remove('js-opened');
+        sidenav.classList.remove('position-fixed');
     });
 
     //closing navigation if click outside it

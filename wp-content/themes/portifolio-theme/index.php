@@ -10,24 +10,45 @@ get_header(); ?>
     </div>
     <div class="content">
         <div id="main" class="scroll-container">
-            <section>
+            <section data-index="0">
                 <?php get_template_part( 'template-parts/landing' ); ?>
             </section>
-            <section class="section2">
-                <div>
-                    <span>Section 2</span>
-                </div>
-            </section>
-            <section class="section3">
-                <div>
-                    <span>Section 3</span>
-                </div>
-            </section>
-            <section class="section4">
-                <div>
-                    <span>Section 4</span>
-                </div>
-            </section>
+
+            <?php 
+
+            $args = array(
+                'post_type' => 'post',
+                'post_status' => 'publish',
+                'posts_per_page' => -1
+            );
+            
+            // Custom query.
+            $query = new WP_Query( $args );
+
+            // Check that we have query results.
+            if ( $query->have_posts() ) {
+            
+                // Start looping over the query results.
+                while ( $query->have_posts() ) {
+            
+                    $query->the_post();
+
+             ?>
+
+                <section>
+                    <?php get_template_part( 'template-parts/post' ); ?>
+                </section>
+
+            <?php                  
+            
+                }
+            
+            }            
+            // Restore original post data.
+            wp_reset_postdata();
+            
+            ?>
+
             <section class="section5">
                 <div>
                     <span>Section 5</span>

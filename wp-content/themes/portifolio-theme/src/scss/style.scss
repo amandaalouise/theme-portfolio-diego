@@ -65,6 +65,11 @@ body {
 //   text-align: center;
 // }
 
+.content {
+  flex-grow: 2;
+  height: 100vh;
+}
+
 h1 {
     margin: 0;
 
@@ -202,26 +207,27 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-
     overflow-x: hidden;
 }
+
 
 .page,
 .page__content {
     position: relative;
+    display: flex;
 }
 
 .page {
     min-height: 100vh;
-
     perspective: 1500px;
-
     background-color: rgba($dark-theme-color, .5);
 }
 
 .page__content {
     min-height: 100vh;
-
+    flex-direction: row;
+    width: 100vw;
+    display: flex;
     background-color: $light-theme-color;
 }
 
@@ -240,11 +246,9 @@ $nav-icon-offset-horz: 10px;
     position: fixed;
     top: 0;
     bottom: 0;
-
     width: $nav-width;
     padding: $nav-padding;
     box-sizing: border-box;
-
     background-color: $nav-bg;
     box-shadow: 4px 0 5px 0 rgba(0, 0, 0, 0.14),
         1px 0 10px 0 rgba(0, 0, 0, 0.12),
@@ -630,71 +634,20 @@ ol {
     left: 50%;
 }
 
-// Teste
-
-.section1 {
-    background-color: #7DBCD4;
-}
-
-.section2 {
-    background-color: #98C19F;
-}
-
-.section3 {
-    background-color: #A199E2;
-}
-
-.section4 {
-    background-color: #CC938E;
-}
-
-.section5 {
-    background-color: #D2C598;
-}
-
-section div {
-    font-family: 'Open Sans';
-    font-style: normal;
-    text-align: center;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-span {
-    font-size: 4em;
-    font-style: normal;
-    color: #fff;
-}
-
-.button {
-    background-color: #F2CF66;
-    border-bottom: 5px solid #D1B358;
-    text-shadow: 0px -2px #D1B358;
-    padding: 10px 40px;
-    border-radius: 10px;
-    font-size: 25px;
-    color: #FFF;
-    text-decoration: none;
+section {
+  height: 100vh !important;
 }
 
 /* The sidebar menu */
 .sidenav {
-    height: 100%;
-    /* Full-height: remove this if you want "auto" height */
+    height: 100vh;
     width: 79px;
-    /* Set the width of the sidebar */
-    position: fixed;
-    /* Fixed Sidebar (stay in place on scroll) */
+    flex-grow: 0;
     z-index: 1;
-    /* Stay on top */
     top: 0;
-    /* Stay at the top */
     left: 0;
     background-color: #F7F7F7;
-    /* Black */
     overflow-x: hidden;
-    /* Disable horizontal scroll */
     padding-top: 20px;
 }
 
