@@ -8,7 +8,7 @@ const bootstrap = new webpack.ProvidePlugin({
   jQuery: 'jquery',
   'windows.jQuery': 'jquery',
 });
-const favicon = new HtmlWebpackPlugin({   
+const favicon = new HtmlWebpackPlugin({
   favicon: 'src/images/favicon.ico'
 });
 
@@ -21,9 +21,25 @@ module.exports = {
   output: {
     filename: './dist/js/main.min.js',
   },
+  watch: true,
   module: {
     rules: [
-      {test: /\.(jpe?g|png|gif|ico)$/i, loader: 'file?name=[name].[ext]'},
+      {
+				test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+				loader: 'file-loader',
+				query: {
+					name: 'static/media/fonts/[name].[hash:8].[ext]'
+				}
+			},
+      {
+        test: /\.(woff2?|eot|ttf|otf)$/,
+        loader: 'file-loader',
+        options: {
+          limit: 10000,
+          name: '[name].[hash:7].[ext]'
+        }
+      },
+      { test: /\.(jpe?g|png|gif|ico)$/i, loader: 'file?name=[name].[ext]' },
       {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({

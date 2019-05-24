@@ -1,6 +1,5 @@
 import 'popper.js';
 import 'bootstrap';
-import '@fortawesome/fontawesome-free';
 
 import '../scss/style.scss';
 
@@ -27,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //hide nav open btn when the nav is open, adding/removing open classes to nav and content
     var navOpenBtn = document.querySelector('.nav-open-btn');
-    var navCloseBtn = document.querySelector('.nav__close');
+    var navCloseBtn = document.querySelector('.close-btn');
     var nav = document.querySelector('.nav');
     var pageContent = document.querySelector('.page__content');
     var navList = document.querySelector('.nav__list');
