@@ -10,7 +10,7 @@ get_header(); ?>
     </div>
     <div class="content">
         <div id="main" class="scroll-container">
-            <section data-index="0">
+            <section>
                 <?php get_template_part( 'template-parts/landing' ); ?>
             </section>
 
@@ -22,37 +22,25 @@ get_header(); ?>
                 'posts_per_page' => -1
             );
             
-            // Custom query.
             $query = new WP_Query( $args );
-
-            // Check that we have query results.
             if ( $query->have_posts() ) {
-            
-                // Start looping over the query results.
                 while ( $query->have_posts() ) {
-            
                     $query->the_post();
-
-             ?>
+            ?>
 
                 <section>
                     <?php get_template_part( 'template-parts/post' ); ?>
                 </section>
 
             <?php                  
-            
                 }
-            
             }            
-            // Restore original post data.
             wp_reset_postdata();
             
             ?>
 
             <section class="section5">
-                <div>
-                    <span>Section 5</span>
-                </div>
+                <?php get_template_part( 'template-parts/contact' ); ?>
             </section>
         </div>
     </div>

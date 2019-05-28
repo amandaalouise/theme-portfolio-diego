@@ -18,6 +18,8 @@
 $fa-font-path : "~@fortawesome/fontawesome-free/webfonts";
 @import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @import "~@fortawesome/fontawesome-free/scss/brands.scss";
+@import "./header.scss";
+
 
 //COMMON VARIABLES
 $dark-theme-color: #F7F7F7;
@@ -48,44 +50,9 @@ $light-theme-color: #fff;
     bottom: $bottom;
 }
 
-/* common styles !!!YOU DON'T NEED THEM  */
-body {
-    font: {
-        family: 'Overpass', sans-serif;
-        size: 16px;
-    }
-
-    color: $dark-theme-color;
-}
-
-// .content {
-//   width: 550px;
-//   padding-top: 50px;
-//   margin: auto;
-//   text-align: center;
-// }
-
 .content {
-  flex-grow: 2;
-  height: 100vh;
-}
-
-h1 {
-    margin: 0;
-
-    font: {
-        weight: 400;
-        size: 35px;
-    }
-
-    span {
-        font: {
-            family: 'The Girl Next Door', cursive;
-            weight: 700;
-        }
-
-        color: $accent-theme-color;
-    }
+    flex-grow: 2;
+    height: 100vh;
 }
 
 .submenu {
@@ -208,6 +175,7 @@ body {
     padding: 0;
     min-height: 100vh;
     overflow-x: hidden;
+    max-height: 100vh;
 }
 
 
@@ -219,12 +187,14 @@ body {
 
 .page {
     min-height: 100vh;
+    max-height: 100vh;
     perspective: 1500px;
     background-color: rgba($dark-theme-color, .5);
 }
 
 .page__content {
     min-height: 100vh;
+    max-height: 100vh;
     flex-direction: row;
     width: 100vw;
     display: flex;
@@ -401,15 +371,28 @@ $nav-list-offset-vert: 30px;
 .nav--offcanvas-1 {
     @include transition-mix();
 
-    left: (- $nav-width);
+    // left: (- $nav-width);
 
     /* opened styles */
     &.js-opened {
         @include transition-mix($property: left);
-        left: 0;
+        // left: 0;
+        // opacity: 1;
+        // visibility: visible;
 
-        opacity: 1;
-        visibility: visible;
+        position: absolute;
+        z-index: 1001;
+        width: 300px;
+        height: 100%;
+        background: #373a47;
+        padding: 2.5em 1.5em 0;
+        font-size: 1.15em;
+        -webkit-transform: translate3d(-320px, 0, 0);
+        transform: translate3d(-320px, 0, 0);
+        -webkit-transition: -webkit-transform 0.4s;
+        transition: transform 0.4s;
+        -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+        transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
     }
 }
 
@@ -421,7 +404,7 @@ $nav-list-offset-vert: 30px;
     /* opened styles */
     &.js-opened {
         @include transition-mix($duration: .3s);
-        left: $nav-width;
+        // left: $nav-width;
     }
 }
 
@@ -544,6 +527,10 @@ $nav-list-offset-vert: 30px;
     }
 }
 
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
 body,
 html {
     margin: 0;
@@ -570,14 +557,13 @@ html {
     font-family: 'Poppins', sans-serif;
     z-index: 1;
     padding: 12px 0;
-    height: 5px;
+    // height: 5px;
     position: absolute;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
 }
 
 .dots li a {
@@ -635,20 +621,21 @@ ol {
 }
 
 section {
-  height: 100vh !important;
+    height: 100vh !important;
 }
 
 /* The sidebar menu */
 .sidenav {
     height: 100vh;
+    max-height: 100vh;
     width: 79px;
     flex-grow: 0;
     z-index: 1;
     top: 0;
     left: 0;
     background-color: #F7F7F7;
-    overflow-x: hidden;
     padding-top: 20px;
+    overflow: hidden;
 }
 
 .menu-icon {
@@ -666,9 +653,16 @@ span.title {
     cursor: pointer;
 }
 
+.ui-nav-mobile {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
 .main-menu {
     padding-inline-start: 30px !important;
     font-size: 24px;
+    list-style-type: none;
+
 
     li {
         margin-bottom: 32px;
@@ -682,6 +676,7 @@ span.title {
     ul.sub-menu {
 
         padding-inline-start: 0px !important;
+        list-style-type: none;
 
         :first-child {
             margin-top: 22px;
@@ -698,6 +693,12 @@ span.title {
         }
     }
 }
+
+.social-bottom {
+    position: absolute;
+    bottom: 0px;
+}
+
 
 .social-menu {
     padding-inline-start: 30px !important;
@@ -743,24 +744,118 @@ span.title {
 }
 
 .navdiv {
-  display: flex;
-  flex-flow: column;
-  height: 100vh;
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
 }
 
 .height-grow {
-  flex-grow : 1;
+    flex-grow: 1;
 }
 
 .typewriter {
-  color: $accent-theme-color;
-  font-size: 28px;
-  font-weight: bold;
+    color: $accent-theme-color;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 .typed-cursor {
-  color: $accent-theme-color;
-  font-size: 28px;
-  margin-left: 2px;
+    color: $accent-theme-color;
+    font-size: 28px;
+    margin-left: 2px;
 }
+
+.featured-img {
+
+    height: 100%;
+    width: 100%;
+
+    img {
+        max-width: 100%;
+        height: 100vh;
+    }
+
+}
+
+.h-100vh {
+    height: 100vh;
+}
+
+.w-100vw {
+    width: 100vw;
+}
+
+.post-content {
+    padding: 0 20%;
+}
+
+.post-tags {
+    background: #505CFD;
+    color: #fff;
+    border-radius: 25px;
+    padding: 6px 20px;
+    margin-right: 3px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.post-title {
+    font-size: 70px;
+    font-weight: bold;
+    word-wrap: break-word;
+    padding-top: 25px;
+    color: #404044;
+}
+
+.post-link {
+    color: #404044;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    padding-top: 25px;
+
+    i {
+        color: #505CFD;
+        vertical-align: middle !important;
+        font-size: 28px;
+    }
+}
+
+.post-link:hover {
+    text-decoration: none;
+}
+
+.bg-post {
+    background-image: url("../images/pattern.png"), linear-gradient(#fff);
+    background-repeat: repeat;
+}
+
+.share-btn {
+    -ms-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    transform: rotate(270deg);
+    -webkit-transform-origin: 50%  51%;
+    text-transform: uppercase;
+    font-size: 14px;
+    position: absolute;
+    bottom: 85px;
+
+    a {
+        color: #404044;
+        font-weight: bold;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    i {
+        vertical-align: middle !important;
+        font-size: 28px;
+        margin-right: 5px;
+    }
+}
+
 //Fim teste

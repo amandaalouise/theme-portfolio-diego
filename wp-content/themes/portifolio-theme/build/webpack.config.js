@@ -31,7 +31,7 @@ module.exports = {
 					name: 'static/media/fonts/[name].[hash:8].[ext]'
 				}
 			},
-      { test: /\.(jpe?g|png|gif|ico)$/i, loader: 'file?name=[name].[ext]' },
+      { test: /\.(jpe?g|png|gif|ico)$/i, loader: 'file-loader?name=[name].[ext]' },
       {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
