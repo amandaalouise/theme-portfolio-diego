@@ -14,7 +14,7 @@ get_header(); ?>
     </div>
     <div class="content">
         <div id="main" class="scroll-container">
-            <section>
+            <section class="bg-post">
                 <?php get_template_part( 'template-parts/landing' ); ?>
             </section>
 
@@ -32,7 +32,7 @@ get_header(); ?>
                     $query->the_post();
             ?>
 
-            <section>
+            <section class="bg-post">
                 <?php get_template_part( 'template-parts/post' ); ?>
             </section>
 
@@ -43,7 +43,7 @@ get_header(); ?>
             
             ?>
 
-            <section class="section5">
+            <section class="bg-post">
                 <?php get_template_part( 'template-parts/contact' ); ?>
             </section>
         </div>
