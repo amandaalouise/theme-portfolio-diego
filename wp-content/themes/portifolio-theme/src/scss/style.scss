@@ -1,11 +1,10 @@
 /*
-	Theme Name: Wordpress Webpack Boilerplate
+	Theme Name: Portifólio Diego Velazquez
 	Theme URI:
-	Description: A very basic Wordpress theme using Webpack to compile Sass and JS.
-	Version: 0.0.1
-	Author: Dan Derozier (@danderozier)
-	Author URI: https://github.com/danderozier
-	Tags:
+	Description: Portifólio desenvolvido a partir do design de Diego Velazquez utilizando webpack.
+	Version: 1.0.0
+	Author: Amanda Louise Acosta Morais
+	Author URI: https://github.com/amandaalouise
 
 	License: MIT
 	License URI: http://opensource.org/licenses/mit-license.php
@@ -20,6 +19,7 @@ $fa-font-path : "~@fortawesome/fontawesome-free/webfonts";
 @import "~@fortawesome/fontawesome-free/scss/brands.scss";
 @import "./header.scss";
 @import "./texts.scss";
+@import "../../node_modules/animate.css/animate.min.css";
 
 //COMMON VARIABLES
 $dark-theme-color: #F7F7F7;
@@ -168,32 +168,6 @@ h2 {
     }
 }
 
-/* page's styles !!!YOU NEED THEM */
-// html,
-// body {
-//     margin: 0;
-//     padding: 0;
-//     min-height: 100vh;
-//     overflow-x: hidden;
-//     max-height: 100vh;
-// }
-
-// html, body {
-//     min-height: 100% !important;
-//     width: 100% !important;
-//     margin: 0;
-//     padding: 0;
-// }
-
-// body {
-//     margin: 0;
-//     padding: 0;
-//     border: 0;
-//     overflow: hidden;
-//     height: 100%;
-//     max-height: 100%;
-// }
-
 body {
     height: 100vh;
     margin: 0;
@@ -231,11 +205,8 @@ body {
 $nav-width: 300px;
 $nav-bg: $dark-theme-color;
 $nav-padding: 30px 25px 30px 0;
-
 $nav-list-offset-vert: 45px;
-
 $nav-item-offset-vert: 20px;
-
 $nav-icon-offset-horz: 10px;
 
 .nav {

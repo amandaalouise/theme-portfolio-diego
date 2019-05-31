@@ -2,7 +2,7 @@
     <div class="col-6">
         <div class="h-100vh">
             <div class="row h-100vh post-content align-items-center">
-                <div class="d-block">
+                <div class="d-block animated fadeInLeft">
                     <div class="typewriter d-inline-flex"></div>
                     <?php if ( !function_exists('custom_sidebars') || !dynamic_sidebar("titulo_front") ) : ?>
                     <?php endif ;?>
@@ -27,7 +27,7 @@
         </div>
     </div>
     <div class="col-6 col-md-6 col-sm-6">
-        <div class="featured-img">
+        <div class="featured-img animated fadeInRight">
             <?php if ( !function_exists('custom_sidebars') || !dynamic_sidebar("landing_image") ) : ?>
             <?php endif ;?>
         </div>

@@ -1,7 +1,7 @@
 <div class="row bg-post">
     <div class="col-6">
         <div class="h-100vh">
-            <div class="row h-100vh post-content align-items-center">
+            <div class="row h-100vh post-content align-items-center animated fadeInLeft">
                 <div class="d-block">
                     <?php 
                     $posttags = get_the_tags();
