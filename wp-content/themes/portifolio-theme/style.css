@@ -12489,6 +12489,11 @@ readers do not read off random characters that represent icons */
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s; }
 
+.navbar-collapse {
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vh; }
+
 .contact-text-1 {
   font-size: 12px;
   color: #404044;
@@ -12631,17 +12636,6 @@ h2 {
       background-color: #FC448D;
       border-color: #FC448D; }
 
-body {
-  height: 100vh;
-  margin: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row; }
-
 .page,
 .page__content {
   position: relative;
@@ -12672,7 +12666,7 @@ body {
   background-color: #fff; }
 
 /* navigation styles */
-.nav {
+.nav.ui-nav {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -13024,11 +13018,22 @@ body {
   .page__content--offcanvas-5.js-opened {
     left: 300px; }
 
-body {
-  font-family: 'Poppins', sans-serif; }
+@media only screen and (min-width: 992px) {
+  body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row; } }
 
 body,
 html {
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
   width: 100%;

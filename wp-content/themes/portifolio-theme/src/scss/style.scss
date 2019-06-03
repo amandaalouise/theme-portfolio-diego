@@ -168,15 +168,6 @@ h2 {
     }
 }
 
-body {
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-  }
-  
-
-
 .page,
 .page__content {
     position: relative;
@@ -209,7 +200,7 @@ $nav-list-offset-vert: 45px;
 $nav-item-offset-vert: 20px;
 $nav-icon-offset-horz: 10px;
 
-.nav {
+.nav.ui-nav {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -524,12 +515,21 @@ $nav-list-offset-vert: 30px;
     }
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
+
+@media only screen and (min-width: 992px) {
+    body {
+        font-family: 'Poppins', sans-serif;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+    }
 }
+
 
 body,
 html {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     width: 100%;
