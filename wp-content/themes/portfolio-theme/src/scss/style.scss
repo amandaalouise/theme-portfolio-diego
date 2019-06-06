@@ -19,6 +19,7 @@ $fa-font-path : "~@fortawesome/fontawesome-free/webfonts";
 @import "~@fortawesome/fontawesome-free/scss/brands.scss";
 @import "./header.scss";
 @import "./texts.scss";
+@import './media.scss';
 @import "../../node_modules/animate.css/animate.min.css";
 
 //COMMON VARIABLES
@@ -642,9 +643,15 @@ section {
 }
 
 span.title {
-    color: $accent-theme-color;
+    color: $accent-theme-color !important;
     font-size: 32px;
     font-weight: bold;
+}
+
+span.title a {
+    color: $accent-theme-color !important;
+    font-size: 28px !important;
+    font-weight: bold !important;
 }
 
 .close-btn {
@@ -801,6 +808,16 @@ span.title {
 }
 
 .typewriter {
+    color: $accent-theme-color;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    min-height: 45px;
+    height: 45px;
+    line-height: 45px;
+}
+
+#typed2 {
     color: $accent-theme-color;
     font-size: 28px;
     font-weight: bold;

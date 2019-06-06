@@ -12494,6 +12494,14 @@ readers do not read off random characters that represent icons */
   height: 100vh;
   max-height: 100vh; }
 
+.navbar-fixed-top {
+  position: fixed;
+  right: 0;
+  left: 0;
+  border-radius: 0;
+  top: 0;
+  z-index: 100; }
+
 .contact-text-1 {
   font-size: 12px;
   color: #404044;
@@ -12529,6 +12537,130 @@ readers do not read off random characters that represent icons */
   font-size: 14px;
   color: #404044;
   margin-bottom: 12px; }
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media (min-width: 481px) and (max-width: 767px) {
+  .h-100vh {
+    height: calc(100vh - 41px) !important; }
+  .contact-mob {
+    height: 85vh;
+    margin-top: 6em !important; }
+  #form-message {
+    margin-top: 3px !important; }
+  .page__content {
+    margin-top: 86px !important; }
+  #wpadminbar {
+    position: fixed !important; }
+  body,
+  html {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden !important;
+    overflow-y: auto !important; }
+  .navbar {
+    padding: 20px 40px; }
+  .navbar-light .navbar-toggler {
+    border: none; }
+  .navbar-light {
+    background-color: white !important;
+    border-bottom: solid 1px #F7F7F7; }
+  .landing-social {
+    margin-top: 40px;
+    font-size: 14px; }
+    .landing-social ul {
+      -webkit-padding-start: 0px !important;
+         -moz-padding-start: 0px !important;
+              padding-inline-start: 0px !important; }
+    .landing-social li a {
+      color: #404044;
+      font-weight: bold; }
+    .landing-social li {
+      list-style: none;
+      display: block !important;
+      margin-top: 30px; }
+      .landing-social li:nth-child(1) :before {
+        content: "\F08C";
+        font-family: "Font Awesome 5 Brands";
+        font-weight: 900;
+        margin-right: 5px; }
+      .landing-social li:nth-child(2) :before {
+        font-family: "Font Awesome 5 Brands";
+        font-weight: 900;
+        content: "\F16D";
+        margin-right: 5px; }
+      .landing-social li:nth-child(3) :before {
+        font-family: "Font Awesome 5 Brands";
+        font-weight: 900;
+        content: "\F17D";
+        margin-right: 5px; } }
+
+/* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+  .h-100vh {
+    height: calc(100vh - 41px) !important; }
+  .contact-mob {
+    height: 85vh;
+    margin-top: 6em !important; }
+  #form-message {
+    margin-top: 3px !important; }
+  #wpadminbar {
+    position: fixed !important; }
+  .page__content {
+    margin-top: 86px !important; }
+  body,
+  html {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden !important;
+    overflow-y: auto !important; }
+  .navbar {
+    padding: 20px 40px; }
+  .navbar-light .navbar-toggler {
+    border: none; }
+  .navbar-light {
+    background-color: white !important;
+    border-bottom: solid 1px #F7F7F7; }
+  .landing-social {
+    margin-top: 40px;
+    font-size: 14px; }
+    .landing-social ul {
+      -webkit-padding-start: 0px !important;
+         -moz-padding-start: 0px !important;
+              padding-inline-start: 0px !important; }
+    .landing-social li a {
+      color: #404044;
+      font-weight: bold; }
+    .landing-social li {
+      list-style: none;
+      display: block !important;
+      margin-top: 30px; }
+      .landing-social li:nth-child(1) :before {
+        content: "\F08C";
+        font-family: "Font Awesome 5 Brands";
+        font-weight: 900;
+        margin-right: 5px; }
+      .landing-social li:nth-child(2) :before {
+        font-family: "Font Awesome 5 Brands";
+        font-weight: 900;
+        content: "\F16D";
+        margin-right: 5px; }
+      .landing-social li:nth-child(3) :before {
+        font-family: "Font Awesome 5 Brands";
+        font-weight: 900;
+        content: "\F17D";
+        margin-right: 5px; } }
 
 .content {
   -webkit-box-flex: 2;
@@ -13132,9 +13264,14 @@ section {
   color: #404044; }
 
 span.title {
-  color: #505CFD;
+  color: #505CFD !important;
   font-size: 32px;
   font-weight: bold; }
+
+span.title a {
+  color: #505CFD !important;
+  font-size: 28px !important;
+  font-weight: bold !important; }
 
 .close-btn {
   cursor: pointer; }
@@ -13246,6 +13383,15 @@ span.title {
           flex-grow: 1; }
 
 .typewriter {
+  color: #505CFD;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  min-height: 45px;
+  height: 45px;
+  line-height: 45px; }
+
+#typed2 {
   color: #505CFD;
   font-size: 28px;
   font-weight: bold;
