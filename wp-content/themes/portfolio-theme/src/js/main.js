@@ -2,12 +2,15 @@ import 'jquery';
 import 'popper.js';
 import 'bootstrap';
 import 'js-offcanvas';
+import 'owl.carousel';
+
 
 import '../scss/style.scss';
 
 import Typed from 'typed.js';
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+
     var typed2 = new Typed('#typed2', {
         strings: require('../../translation.json'),
         typeSpeed: 200,
@@ -16,9 +19,8 @@ document.addEventListener("DOMContentLoaded", function() {
         backSpeed: 150,
         smartBackspace: true,
     });
+
 });
-
-
 document.addEventListener("DOMContentLoaded", function () {
 
     /** Menu Navigation */

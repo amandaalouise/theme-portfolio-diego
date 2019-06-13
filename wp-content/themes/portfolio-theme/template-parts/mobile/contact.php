@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" id="contact">
     <div class="col-12">
         <div class="row contact-mob pl-3 pr-4 pt-2 pb-2 mt-5">
             <div class="col-12 align-self-end">

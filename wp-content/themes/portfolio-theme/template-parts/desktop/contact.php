@@ -1,7 +1,7 @@
-<div class="row">
+<div class="row" id="contact">
     <div class="col-6">
         <div class="h-100vh">
-            <div class="row h-100vh post-content align-items-center">
+            <div class="row h-100vh index-content align-items-center">
                 <div class="col-12 align-self-end">
                     <p class="contact-text-1">Get in touch</p>
                     <p class="contact-text-2">Say Hello</p>

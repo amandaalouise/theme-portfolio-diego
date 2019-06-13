@@ -1,6 +1,6 @@
 <div class="page__content">
     <div class="content">
-        <div id="main" class="scroll-container">
+        <div id="main">
             <section class="bg-post">
                 <?php get_template_part( 'template-parts/mobile/landing' ); ?>
             </section>

@@ -21,6 +21,8 @@ $fa-font-path : "~@fortawesome/fontawesome-free/webfonts";
 @import "./texts.scss";
 @import './media.scss';
 @import "../../node_modules/animate.css/animate.min.css";
+@import "../../node_modules/owl.carousel/dist/assets/owl.carousel.css";
+@import "../../node_modules/owl.carousel/dist/assets/owl.theme.default.css";
 
 //COMMON VARIABLES
 $dark-theme-color: #F7F7F7;
@@ -617,11 +619,6 @@ ol {
 .dots-middle {
     left: 50%;
 }
-
-section {
-    height: 100vh !important;
-}
-
 /* The sidebar menu */
 .sidenav {
     height: 100vh;
@@ -856,6 +853,10 @@ span.title a {
 }
 
 .post-content {
+    padding: 0 0 0 12%;
+}
+
+.index-content {
     padding: 0 20%;
 }
 
@@ -998,4 +999,132 @@ textarea.form-control:not(:placeholder-shown)~label {
     padding: 2rem 0 0 !important;
     height: 150px;
     margin-top: 20px;
+}
+
+
+img.hover-shadow {
+    transition: 0.3s;
+}
+
+.hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+h4 {
+    font-family: 'Open Sans';
+    margin: 0;
+}
+
+.modal,
+body.modal-open {
+    padding-right: 0 !important
+}
+
+body.modal-open {
+    overflow: auto
+}
+
+body.scrollable {
+    overflow-y: auto
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-start;
+
+    .btn {
+        position: absolute;
+        right: 10px;
+    }
+}
+
+
+/* Bottom left text */
+.txt-bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}
+
+/* Top left text */
+.txt-top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+
+/* Top right text */
+.txt-top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+}
+
+/* Bottom right text */
+.txt-bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+}
+
+/* Bottom right text */
+.txt-bottom-center {
+    position: absolute;
+    width: 100%;
+    bottom: 50px;
+    text-align: center;
+}
+
+
+/* Centered text */
+.txt-centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.image-container {
+    position: relative;
+    text-align: center;
+}
+
+.titulo-interna {
+    font-size: 70px;
+    font-weight: bold;
+    color: #404044;
+    display: block;
+}
+
+.scroll-label {
+    -ms-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    transform: rotate(270deg);
+    color: #404044;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 70px;
+    left: 48%;
+    bottom: 80px;
+}
+
+.scroll-txt:before {
+    background-color: #404044;
+    content: "";
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+
+.scroll-txt:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+
+.info-projeto,
+.info-projeto a {
+    color: #404044;
 }
