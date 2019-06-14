@@ -5,9 +5,6 @@
                 menu
             </i>
         </div>
-        <div class="share-btn justify-content-center">
-            <a href=""><i class="material-icons">add</i> Share</a>
-        </div>
     </div>
     <div class="content">
         <div class="txt-bottom-center scroll-label-index">
