@@ -11,7 +11,7 @@
 */
 
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
-@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 $fa-font-path : "~@fortawesome/fontawesome-free/webfonts";
@@ -311,7 +311,7 @@ $nav-icon-offset-horz: 10px;
 }
 
 /* nav open btn styles */
-$nav-open-btn-vert-offset: 30px;
+$nav-open-btn-vert-offset: 25px;
 $nav-open-btn-horz-offset: 10px;
 
 .nav-open-btn {
@@ -548,7 +548,7 @@ html {
     padding: 0;
 }
 
-.scroll-container section {
+.scroll-container  {
     width: 100%;
     height: 100%;
 }
@@ -619,6 +619,7 @@ ol {
 .dots-middle {
     left: 50%;
 }
+
 /* The sidebar menu */
 .sidenav {
     height: 100vh;
@@ -630,7 +631,7 @@ ol {
     top: 0;
     left: 0;
     background-color: #F7F7F7;
-    padding-top: 20px;
+    padding-top: 30px;
     overflow: hidden;
 }
 
@@ -1049,15 +1050,20 @@ body.scrollable {
 /* Top left text */
 .txt-top-left {
     position: absolute;
-    top: 8px;
-    left: 16px;
+    top: 25px;
+    left: 105px;
+    z-index: 100;
+    font-size: 28px;
+    color: #404044;
+    font-weight: bold;
 }
 
 /* Top right text */
 .txt-top-right {
     position: absolute;
-    top: 8px;
-    right: 16px;
+    top: 25px;
+    right: 80px;
+    z-index: 100;
 }
 
 /* Bottom right text */
@@ -1109,6 +1115,30 @@ body.scrollable {
     bottom: 80px;
 }
 
+.scroll-label-index {
+    -ms-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    transform: rotate(270deg);
+    color: #404044;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 70px;
+    left: 49%;
+    bottom: 120px;
+    z-index: 100;
+
+    .scroll-txt:before {
+        background-color: #404044;
+        content: "";
+        display: inline-block;
+        height: 1.5px;
+        position: relative;
+        vertical-align: middle;
+        width: 58%;
+    }
+}
+
 .scroll-txt:before {
     background-color: #404044;
     content: "";
@@ -1127,4 +1157,85 @@ body.scrollable {
 .info-projeto,
 .info-projeto a {
     color: #404044;
+}
+
+.bg-grey {
+    height: 80%;
+    min-height: 80%;
+    background-color: #F7F7F7;
+    position: absolute;
+    width: 95%;
+    top: 70px;
+    z-index: 0;
+}
+
+.passo-num {
+    color: #DEDEDE;
+    font-size: 100px;
+    font-weight: bold;
+    z-index: 100;
+    position: relative;
+    margin-left: 20px;
+    height: 50%;
+}
+
+.h-250 {
+    height: 250px;
+}
+
+.section-title {
+    color: #404044;
+    font-size: 32px;
+    font-weight: bold !important;
+}
+
+.passo-titulo {
+    position: relative;
+    font-size: 24px;
+    font-weight: bold;
+    color: #404044;
+    z-index: 100;
+    margin-left: 32px;
+}
+
+.passo-desc {
+    position: relative;
+    font-size: 14px;
+    color: #666666;
+    z-index: 100;
+    margin-left: 32px;
+    line-height: 2;
+}
+
+.fixed-top-left {
+    float: left;
+    z-index: 100;
+    font-size: 28px;
+    color: #404044;
+    font-weight: bold;
+    margin-bottom: -42px;
+    position: relative;
+    top: 25px;
+    left: 32px;
+}
+
+.fixed-top-right {
+    float: right;
+    z-index: 100;
+    margin-bottom: -42px;
+    position: relative;
+    top: 25px;
+    right: 50px;
+}
+
+.fixed-top-right {
+    a {
+        color: #404044;
+        font-size: 20px;
+        text-decoration: none;
+
+        i {
+            margin-right: 12px;
+        }
+    }
 }

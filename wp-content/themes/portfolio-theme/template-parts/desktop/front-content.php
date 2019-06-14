@@ -10,6 +10,11 @@
         </div>
     </div>
     <div class="content">
+        <div class="txt-bottom-center scroll-label-index">
+            <span class="scroll-txt">
+                Scroll
+            </span>
+        </div>
         <div id="main" class="scroll-container">
             <section class="bg-post">
                 <?php get_template_part( 'template-parts/desktop/landing' ); ?>

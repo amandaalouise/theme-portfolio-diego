@@ -15,133 +15,99 @@ add_filter('wpcf7_form_elements', function($content) {
   return $content;
 });
 
+remove_filter('widget_text_content', 'wpautop');
+
 // Register Sidebars
 function custom_sidebars() {
+
+	register_sidebar( $args = array(
+		'id'            => 'featured_name',
+		'name'          => __( 'Featured name' ),
+		'before_title'  => '',
+		'after_title'   => '',
+		'before_widget' => '<span id="%1$s">',
+		'after_widget'  => '</span>'
+	)); 
 	
 	register_sidebar( $args = array(
 		'id'            => 'titulo_front',
-		'name'          => __( 'Front page title', 'text_domain' ),
+		'name'          => __( 'Front page title' ),
 		'before_title'  => '',
 		'after_title'   => '',
-		'before_widget' => '<div id="%1$s" class="landing-title">',
-		'after_widget'  => '</div>',
+		'before_widget' => '<span id="%1$s" class="landing-title">',
+		'after_widget'  => '</span>'
   	));
   
 	register_sidebar( $args = array(
 		'id'            => 'subtitulo_front',
-		'name'          => __( 'Front page subtitle', 'text_domain' ),
+		'name'          => __( 'Front page subtitle' ),
 		'before_title'  => '',
 		'after_title'   => '',
-		'before_widget' => '<div id="%2$s" class="landing-subtitle">',
-		'after_widget'  => '</div>',
+		'before_widget' => '<span id="%1$s" class="landing-subtitle">',
+		'after_widget'  => '</span>'
 	));
   
 	register_sidebar( $args = array(
 		'id'            => 'description_front',
-		'name'          => __( 'Front page description', 'text_domain' ),
+		'name'          => __( 'Front page description' ),
 		'before_title'  => '',
 		'after_title'   => '',
-		'before_widget' => '<div id="%2$s" class="landing-description">',
-		'after_widget'  => '</div>',
+		'before_widget' => '<span id="%1$s" class="landing-description">',
+		'after_widget'  => '</span>'
 	));
 
 	register_sidebar( $args = array(
 		'id'            => 'landing_image',
-		'name'          => __( 'Landing page image', 'text_domain' ),
+		'name'          => __( 'Landing page image' ),
 		'before_title'  => '',
 		'after_title'   => '',
-		'before_widget' => '<span id="%4$s" class="landing-img">',
-		'after_widget'  => '</span>',
-  	));  
+		'before_widget' => '<span id="%1$s" class="landing-img">',
+		'after_widget'  => '</span>'
+	  ));
+	  
+	  register_sidebar( $args = array(
+		'id'            => 'contact_image',
+		'name'          => __( 'Contact page image' ),
+		'before_title'  => '',
+		'after_title'   => '',
+		'before_widget' => '<span id="%1$s" class="contact-img">',
+		'after_widget'  => '</span>'
+	  ));  
+	  
+	  register_sidebar( $args = array(
+		'id'            => 'contact_title',
+		'name'          => __( 'Contact title' ),
+		'before_title'  => '',
+		'after_title'   => '',
+		'before_widget' => '<span id="%1$s" class="contact-text-1">',
+		'after_widget'  => '</span>'
+	  )); 
+	  
+	  register_sidebar( $args = array(
+		'id'            => 'contact_subtitle',
+		'name'          => __( 'Contact subtitle' ),
+		'before_title'  => '',
+		'after_title'   => '',
+		'before_widget' => '<span id="%1$s" class="contact-text-2">',
+		'after_widget'  => '</span>'
+	  )); 
+	  
+	  register_sidebar( $args = array(
+		'id'            => 'contact_description',
+		'name'          => __( 'Contact description' ),
+		'before_title'  => '',
+		'after_title'   => '',
+		'before_widget' => '<span id="%1$s" class="contact-text-3">',
+		'after_widget'  => '</span>'
+	  )); 	  
 }
 add_action( 'widgets_init', 'custom_sidebars' );
 
 function my_acf_add_local_field_groups() {
 	
 		acf_add_local_field_group(array(
-			'key' => 'group_5d0234f0893d0',
-			'title' => 'Imagens destacadas',
-			'fields' => array(
-				array(
-					'key' => 'field_5d0234f511156',
-					'label' => 'Banner página inicial',
-					'name' => 'banner_pagina_inicial',
-					'type' => 'image',
-					'instructions' => '',
-					'required' => 1,
-					'conditional_logic' => 0,
-					'wrapper' => array(
-						'width' => '',
-						'class' => '',
-						'id' => '',
-					),
-					'return_format' => 'array',
-					'preview_size' => 'thumbnail',
-					'library' => 'all',
-					'min_width' => '',
-					'min_height' => '',
-					'min_size' => '',
-					'max_width' => '',
-					'max_height' => '',
-					'max_size' => '',
-					'mime_types' => '',
-				),
-				array(
-					'key' => 'field_5d02351411157',
-					'label' => 'Banner página interna do post',
-					'name' => 'banner_pagina_interna_do_post',
-					'type' => 'image',
-					'instructions' => '',
-					'required' => 1,
-					'conditional_logic' => 0,
-					'wrapper' => array(
-						'width' => '',
-						'class' => '',
-						'id' => '',
-					),
-					'return_format' => 'array',
-					'preview_size' => 'thumbnail',
-					'library' => 'all',
-					'min_width' => '',
-					'min_height' => '',
-					'min_size' => '',
-					'max_width' => '',
-					'max_height' => '',
-					'max_size' => '',
-					'mime_types' => '',
-				),
-			),
-			'location' => array(
-				array(
-					array(
-						'param' => 'post_type',
-						'operator' => '==',
-						'value' => 'post',
-					),
-				),
-			),
-			'menu_order' => 0,
-			'position' => 'normal',
-			'style' => 'default',
-			'label_placement' => 'top',
-			'instruction_placement' => 'label',
-			'hide_on_screen' => array(
-				0 => 'the_content',
-				1 => 'excerpt',
-				2 => 'discussion',
-				3 => 'comments',
-				4 => 'revisions',
-				5 => 'page_attributes',
-				6 => 'categories',
-				7 => 'send-trackbacks',
-			),
-			'active' => true,
-			'description' => '',
-		));
-		
-		acf_add_local_field_group(array(
 			'key' => 'group_5d022ba9010ed',
-			'title' => 'Projetos',
+			'title' => 'Detalhes',
 			'fields' => array(
 				array(
 					'key' => 'field_5d022bf265b9b',
@@ -461,6 +427,25 @@ function my_acf_add_local_field_groups() {
 							'button_label' => '',
 							'sub_fields' => array(
 								array(
+									'key' => 'field_5d038278e924d',
+									'label' => 'Título',
+									'name' => 'titulo',
+									'type' => 'text',
+									'instructions' => '',
+									'required' => 0,
+									'conditional_logic' => 0,
+									'wrapper' => array(
+										'width' => '',
+										'class' => '',
+										'id' => '',
+									),
+									'default_value' => '',
+									'placeholder' => '',
+									'prepend' => '',
+									'append' => '',
+									'maxlength' => '',
+								),
+								array(
 									'key' => 'field_5d023492b5c31',
 									'label' => 'Descrição',
 									'name' => 'descricao',
@@ -509,6 +494,197 @@ function my_acf_add_local_field_groups() {
 			'description' => '',
 		));
 		
+		acf_add_local_field_group(array(
+			'key' => 'group_5d0234f0893d0',
+			'title' => 'Imagens destacadas',
+			'fields' => array(
+				array(
+					'key' => 'field_5d0234f511156',
+					'label' => 'Banner página inicial',
+					'name' => 'banner_pagina_inicial',
+					'type' => 'image',
+					'instructions' => '',
+					'required' => 1,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'return_format' => 'array',
+					'preview_size' => 'thumbnail',
+					'library' => 'all',
+					'min_width' => '',
+					'min_height' => '',
+					'min_size' => '',
+					'max_width' => '',
+					'max_height' => '',
+					'max_size' => '',
+					'mime_types' => '',
+				),
+				array(
+					'key' => 'field_5d02351411157',
+					'label' => 'Banner página interna do post',
+					'name' => 'banner_pagina_interna_do_post',
+					'type' => 'image',
+					'instructions' => '',
+					'required' => 1,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'return_format' => 'array',
+					'preview_size' => 'thumbnail',
+					'library' => 'all',
+					'min_width' => '',
+					'min_height' => '',
+					'min_size' => '',
+					'max_width' => '',
+					'max_height' => '',
+					'max_size' => '',
+					'mime_types' => '',
+				),
+			),
+			'location' => array(
+				array(
+					array(
+						'param' => 'post_type',
+						'operator' => '==',
+						'value' => 'post',
+					),
+				),
+			),
+			'menu_order' => 0,
+			'position' => 'normal',
+			'style' => 'default',
+			'label_placement' => 'top',
+			'instruction_placement' => 'label',
+			'hide_on_screen' => array(
+				0 => 'the_content',
+				1 => 'excerpt',
+				2 => 'discussion',
+				3 => 'comments',
+				4 => 'revisions',
+				5 => 'page_attributes',
+				6 => 'categories',
+				7 => 'send-trackbacks',
+			),
+			'active' => true,
+			'description' => '',
+		));
+		
+		acf_add_local_field_group(array(
+			'key' => 'group_5d0277daf1ecb',
+			'title' => 'Informações do projeto',
+			'fields' => array(
+				array(
+					'key' => 'field_5d0277e4386b5',
+					'label' => 'Data',
+					'name' => 'data',
+					'type' => 'date_picker',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'display_format' => 'd/m/Y',
+					'return_format' => 'd/m/Y',
+					'first_day' => 1,
+				),
+				array(
+					'key' => 'field_5d0278118c4d9',
+					'label' => 'Habilidades',
+					'name' => 'habilidades',
+					'type' => 'text',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+				),
+				array(
+					'key' => 'field_5d02781e57972',
+					'label' => 'Cliente',
+					'name' => 'cliente',
+					'type' => 'text',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+				),
+				array(
+					'key' => 'field_5d02782a57973',
+					'label' => 'Link do projeto',
+					'name' => 'link_do_projeto',
+					'type' => 'url',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+				),
+			),
+			'location' => array(
+				array(
+					array(
+						'param' => 'post_type',
+						'operator' => '==',
+						'value' => 'post',
+					),
+				),
+			),
+			'menu_order' => 0,
+			'position' => 'normal',
+			'style' => 'default',
+			'label_placement' => 'top',
+			'instruction_placement' => 'label',
+			'hide_on_screen' => '',
+			'active' => true,
+			'description' => '',
+		));
+		
 }
 
 add_action('acf/init', 'my_acf_add_local_field_groups');
+
+function getSocialUrl($param) {
+	$social = wp_get_nav_menu_items("social"); 
+        
+	$array = json_decode(json_encode($social), true);
+
+	$socialinfo = array();
+
+	foreach($array as $a) {
+		$newarr = array($a["post_title"] => $a["url"]);
+		$socialinfo = array_merge($socialinfo, $newarr);
+	}
+
+	return $socialinfo[$param];
+}

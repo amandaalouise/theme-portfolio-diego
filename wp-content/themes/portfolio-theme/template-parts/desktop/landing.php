@@ -1,4 +1,5 @@
 <div class="row">
+    <?php get_template_part("template-parts/desktop/title-nav"); ?>
     <div class="col-6">
         <div class="h-100vh">
             <div class="row h-100vh post-content align-items-center">

@@ -18,6 +18,7 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
+                <?php get_template_part("template-parts/desktop/title-nav"); ?>
                 <div class="image-container">
                     <img src="<?php echo get_field('banner_pagina_interna_do_post')['url'] ?>" class="img-fluid" alt="">
                     <div class="txt-bottom-center scroll-label">
@@ -91,7 +92,7 @@
 
             <div class="container pt-5">
                 <div class="row mt-5 mb-3">
-                    <div class="col-4">
+                    <div class="col-4 section-title">
                         <?php echo $titulo1; ?>
                     </div>
                     <div class="col-8">
@@ -157,7 +158,7 @@
 
             <div class="container pt-5">
                 <div class="row mt-5 mb-3">
-                    <div class="col-4">
+                    <div class="col-4 section-title">
                         <?php echo $titulo2; ?>
                     </div>
                     <div class="col-8">
@@ -202,6 +203,8 @@
             </div>
 
             <?php 
+
+            $passos = array();
     
             if( have_rows('secao_3') ):
             
@@ -214,23 +217,55 @@
                         while( have_rows('imagens') ): the_row(); 
                             $images3[] = get_sub_field('arquivo');
                         endwhile;                 
-                    endif;   
-
-                endwhile;
-            
+                    endif; 
+                    
+                    if( have_rows('passos_do_projeto') ):
+                        while( have_rows('passos_do_projeto') ): the_row(); 
+                            array_push(
+                                $passos,
+                                array(
+                                    "titulo" => get_sub_field('titulo'),
+                                    "descricao" => get_sub_field('descricao')
+                                )
+                            );
+                        endwhile;                 
+                    endif;
+                endwhile;            
             endif;            
             ?>
 
             <div class="container pt-5">
-                <div class="row mt-5 mb-3">
-                    <div class="col-4">
+                <div class="row mt-5">
+                    <div class="col-4 section-title">
                         <?php echo $titulo3; ?>
                     </div>
                     <div class="col-8">
                         <?php echo $conteudo3; ?>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mb-5">
+                    <?php
+                        $p_count = 1;
+                        foreach($passos as $passo) {
+                        ?>
+                    <div class="col-4 h-250 mt-4">
+                        <div class="passo-num">
+                            <?php echo "0" .$p_count. "." ?>
+                        </div>
+                        <div class="bg-grey"></div>
+                        <div class="passo-titulo">
+                            <?php echo $passo["titulo"]; ?>
+                        </div>
+                        <div class="passo-desc">
+                            <?php echo $passo["descricao"]; ?>
+                        </div>
+                    </div>
+                    <?php
+                            $p_count++;
+                        }
+                    ?>
+                </div>
+                <div class="row pt-5">
                     <div class="col-12">
                         <div class="card-deck">
                             <?php 

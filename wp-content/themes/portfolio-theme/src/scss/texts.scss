@@ -1,9 +1,9 @@
-$color-medium-grey : #666666; 
+$color-medium-grey : #666666;
 $color-dark : #404044;
 
 .contact-text-1 {
     font-size: 12px;
-    color: $color-dark;
+    color: $color-medium-grey;
     font-weight: bold;
     margin-bottom: 5px;
 }
@@ -23,29 +23,21 @@ $color-dark : #404044;
 
 .landing-title {
     margin-bottom: 12px;
-
-    p {
-        font-size: 50px;
-        font-weight: bold;
-        color: $color-medium-grey;
-        line-height: 100%;
-    }
+    font-size: 50px;
+    font-weight: bold;
+    color: $color-medium-grey;
+    line-height: 100%;
 }
 
 .landing-subtitle {
     margin-bottom: 12px;
-
-    p {
-        font-size: 20px;
-        color: $color-medium-grey;
-    }
+    font-size: 20px;
+    color: $color-medium-grey;
 }
 
 .landing-description {
-    p {
-        font-size: 14px;
-        color: $color-dark;
-        margin-bottom: 12px;
-    }
+    font-size: 14px;
+    color: $color-dark;
+    margin-bottom: 12px;
 
 }

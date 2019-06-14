@@ -1,7 +1,7 @@
 <?php
 
 
-if(is_user_logged_in()) { ?>
+if((is_user_logged_in()) && !(is_customize_preview())){ ?>
 
 <style type="text/css" media="screen">
 html {
@@ -59,7 +59,10 @@ html {
             </div>
         </div>
         <div class="col-6 text-right">
-            <span class="title">Place</span>
+            <span class="title">
+                <?php if ( !function_exists('custom_sidebars') || !dynamic_sidebar("featured_name") ) : ?>
+                <?php endif ;?>
+            </span>
         </div>
     </div>
     <div class="row mt-5 height-grow">

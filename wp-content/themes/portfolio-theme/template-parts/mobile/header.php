@@ -10,7 +10,6 @@ if(is_user_logged_in()) { ?>
 .page__content {
     margin-top: 90px !important;
 }
-
 </style>
 
 <?php } ?>
@@ -20,7 +19,9 @@ if(is_user_logged_in()) { ?>
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <span class="title"><a href="#">Navbar</a></span>
+    <span class="title"><a href="#">
+            <?php if ( !function_exists('custom_sidebars') || !dynamic_sidebar("featured_name") ) : ?>
+            <?php endif ;?></a></span>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <div class="row mt-5 height-grow">
             <div class="col-12">
