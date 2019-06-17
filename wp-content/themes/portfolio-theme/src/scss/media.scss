@@ -4,6 +4,54 @@
 */
 @media (min-width: 481px) and (max-width: 767px) {
 
+    .passo-num {
+        margin-left: 10px !important;
+    }    
+    
+    .passo-titulo {
+        margin-left: 20px !important;
+    }
+    
+    .passo-desc {
+        margin-left: 20px !important;
+    }    
+
+    .bg-grey {
+        width: 90% !important;
+    }
+
+    .scroll-label {
+        -ms-transform: rotate(270deg);
+        -webkit-transform: rotate(270deg);
+        -moz-transform: rotate(270deg);
+        transform: rotate(270deg);
+        color: #404044;
+        font-weight: bold;
+        text-transform: uppercase;
+        width: 70px;
+        right: 40px !important;
+        left: auto !important;
+        bottom: 80px;
+    }
+
+    .txt-centered-mob {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        padding: 60px;
+    }
+
+    .titulo-interna {
+        font-size: 32px !important;
+        font-weight: bold;
+        color: #404044;
+        display: block;
+    }
+
+    .image-container {
+        position: relative;
+        text-align: left !important;
+    }
 
     .h-100vh {
         height: 100%;
@@ -19,7 +67,7 @@
     }
 
     .page__content {
-        margin-top: 86px !important;
+        margin-top: 70px !important;
     }
 
     #wpadminbar {
@@ -48,6 +96,8 @@
     .navbar-light {
         background-color: white !important;
         border-bottom: solid 1px #F7F7F7;
+        z-index: 100;
+        position: fixed;
     }
 
     .landing-social {
@@ -105,6 +155,55 @@
 */
 @media (min-width: 320px) and (max-width: 480px) {
 
+    .passo-num {
+        margin-left: 10px !important;
+    }    
+    
+    .passo-titulo {
+        margin-left: 20px !important;
+    }
+    
+    .passo-desc {
+        margin-left: 20px !important;
+    }  
+
+    .bg-grey {
+        width: 90% !important;
+    }
+
+    .scroll-label {
+        -ms-transform: rotate(270deg);
+        -webkit-transform: rotate(270deg);
+        -moz-transform: rotate(270deg);
+        transform: rotate(270deg);
+        color: #404044;
+        font-weight: bold;
+        text-transform: uppercase;
+        width: 70px;
+        right: 40px !important;
+        left: auto !important;
+        bottom: 80px;
+    }
+
+    .titulo-interna {
+        font-size: 32px !important;
+        font-weight: bold;
+        color: #404044;
+        display: block;
+    }
+
+    .txt-centered-mob {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        padding: 60px;
+    }
+
+    .image-container {
+        position: relative;
+        text-align: left !important;
+    }
+
     .h-100vh {
         height: calc(100vh - 41px) !important;
     }
@@ -123,7 +222,7 @@
     }
 
     .page__content {
-        margin-top: 86px !important;
+        margin-top: 70px !important;
     }
 
     body,

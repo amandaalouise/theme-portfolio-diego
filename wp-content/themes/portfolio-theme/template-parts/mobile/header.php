@@ -6,20 +6,16 @@ if(is_user_logged_in()) { ?>
 .navbar-fixed-top {
     top: 46px;
 }
-
-.page__content {
-    margin-top: 90px !important;
-}
 </style>
 
 <?php } ?>
 
 <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-light bg-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> 
         <span class="navbar-toggler-icon"></span>
     </button>
-    <span class="title"><a href="#">
+    <span class="title"><a href="<?php echo get_home_url() ?>">
             <?php if ( !function_exists('custom_sidebars') || !dynamic_sidebar("featured_name") ) : ?>
             <?php endif ;?></a></span>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">

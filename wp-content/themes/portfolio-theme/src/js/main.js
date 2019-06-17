@@ -3,6 +3,7 @@ import 'popper.js';
 import 'bootstrap';
 import 'js-offcanvas';
 import 'owl.carousel';
+import 'lightbox2';
 
 
 import '../scss/style.scss';

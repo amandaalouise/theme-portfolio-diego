@@ -66,9 +66,7 @@ $imgArray = array_merge($images1, $images2, $images3);
                 <div class="owl-carousel owl-theme mt-4">
                     <?php foreach($imgArray as $img) {
                         ?>
-                    <div class="mr-2">
-                        <img class="img-fluid" src="<?php echo $img['url'] ?>">
-                    </div>
+                    <img class="img-fluid" src="<?php echo $img['url'] ?>">
                     <?php
                     } ?>
                 </div>

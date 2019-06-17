@@ -26,7 +26,7 @@
     </div>
     <div class="col-6 col-md-6 col-sm-6">
         <div class="featured-img">
-            <img src="http://placehold.it/920x980" alt="">
+            <img src="<?php echo get_field('banner_pagina_inicial')['url'] ?>" class="img-fluid" alt="">
         </div>
     </div>
 </div>
